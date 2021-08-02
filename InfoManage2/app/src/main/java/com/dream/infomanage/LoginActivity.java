@@ -67,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
                 String name=et_user_name.getText().toString().trim();
                 String password=et_psw.getText().toString();
 
+                // 添加用户在注册界面保存的数据
+
                 //检查账号密码是否正确
                 if (TextUtils.isEmpty(name)){
                     Toast.makeText(LoginActivity.this,"请输入账号",Toast.LENGTH_SHORT).show();

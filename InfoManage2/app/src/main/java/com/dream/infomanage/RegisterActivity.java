@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -53,24 +54,19 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean numberjudge(String username,String password,String password_again){
 
-        if (username==null){
+        if (TextUtils.isEmpty(username)){
             Toast.makeText(RegisterActivity.this, "请输入账号", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (password==null){
+        if (TextUtils.isEmpty(password)){
             Toast.makeText(RegisterActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (password_again==null){
+        if (TextUtils.isEmpty(password_again)){
             Toast.makeText(RegisterActivity.this, "请确认密码", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-
-        if (password!=password_again){
-            Toast.makeText(RegisterActivity.this, "密码不匹配，请重新输入", Toast.LENGTH_SHORT).show();
-            return false;
-        }
         if (!password.equals(password_again)){
             Toast.makeText(RegisterActivity.this, "密码不匹配，请重新输入", Toast.LENGTH_SHORT).show();
             return false;
