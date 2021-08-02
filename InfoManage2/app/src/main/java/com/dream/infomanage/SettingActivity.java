@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,7 +63,8 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void exitLogin(){
-        boolean exitSuccess= com.dream.infomanage.SavePWD.clearUserInfo(this);
+        Intent resultintent= new Intent();
+        boolean exitSuccess= UserInfo.clearUserState(this);
         if (exitSuccess){
             Toast.makeText(SettingActivity.this,"退出成功",Toast.LENGTH_SHORT).show();
             jump2main();

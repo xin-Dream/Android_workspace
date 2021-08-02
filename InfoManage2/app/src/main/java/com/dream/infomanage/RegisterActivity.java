@@ -36,11 +36,11 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(numberjudge(username,password,password_again)){
                     //保存用户信息
-                    boolean isSaveSuccess=SavePWD.saveUserInfo(RegisterActivity.this,username,password);
+                    boolean isSaveSuccess= UserInfo.saveUserInfo(RegisterActivity.this,username,password);
 
                     if (isSaveSuccess){
                         Toast.makeText(RegisterActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
-                        jump2Login();
+                        jump2UserInfo();
                     }
                     else {
                         Toast.makeText(RegisterActivity.this,"保存失败",Toast.LENGTH_SHORT).show();
@@ -76,8 +76,8 @@ public class RegisterActivity extends AppCompatActivity {
         return true;
     }
 
-    private void jump2Login(){
-        Intent intent=new Intent(this, com.dream.infomanage.LoginActivity.class);
+    private void jump2UserInfo(){
+        Intent intent=new Intent(this, com.dream.infomanage.UserInfoActivity.class);
         startActivity(intent);
     }
 }

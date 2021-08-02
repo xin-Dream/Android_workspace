@@ -29,9 +29,10 @@ public class MyInfoActivity extends AppCompatActivity {
         rl_setting=(RelativeLayout)findViewById(R.id.rl_setting);
         tv_user_name=(TextView)findViewById(R.id.tv_user_name);
 
-        Map<String,String>userInfo=SavePWD.getUserInfo(this);
+        Map<String,String>userInfo= UserInfo.getUserInfo(this);
+        Map<String,String>userState= UserInfo.getUserState(this);
 
-        if (userInfo.get("username")==null){
+        if (userState.get("state")==null){
             login_flag = false;
             tv_user_name.setText("点击登录");
         }

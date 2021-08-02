@@ -33,7 +33,7 @@ public class UserInfoActivity extends AppCompatActivity {
     }
 
     private void jump2main(){
-        Intent intent=new Intent(this, com.dream.infomanage.MainActivity.class);
+        Intent intent=new Intent(this, com.dream.infomanage.MyInfoActivity.class);
         startActivity(intent);
     }
 }
