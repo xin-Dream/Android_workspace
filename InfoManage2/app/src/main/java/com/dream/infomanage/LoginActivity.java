@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText et_psw;
     private Button btn_login;
     private TextView tv_register;
+    private TextView tv_find_psw;
     private TextView tv_main_title;
     private TextView tv_back;
 
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         et_psw=(EditText) findViewById(R.id.et_psw);
         btn_login=(Button) findViewById(R.id.btn_login);
         tv_register=(TextView)findViewById(R.id.tv_register);
+        tv_find_psw=(TextView)findViewById(R.id.tv_find_psw);
         tv_main_title=(TextView)findViewById(R.id.tv_main_title);
         tv_back=(TextView)findViewById(R.id.tv_back);
 
@@ -58,6 +60,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 jump2MyInfo();
+            }
+        });
+
+        tv_find_psw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump2FindPWD();
             }
         });
 
@@ -113,6 +122,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void jump2UserInfo(){
         Intent intent=new Intent(this,UserInfoActivity.class);
+        startActivity(intent);
+    }
+
+    private void jump2FindPWD(){
+        Intent intent=new Intent(this,FindPswActivity.class);
         startActivity(intent);
     }
 

@@ -67,12 +67,15 @@ public class SettingActivity extends AppCompatActivity {
         boolean exitSuccess= UserInfo.clearUserState(this);
         if (exitSuccess){
             Toast.makeText(SettingActivity.this,"退出成功",Toast.LENGTH_SHORT).show();
-            jump2main();
+            resultintent.putExtra("state","exit success");
+//            jump2main();
         }
         else {
             Toast.makeText(SettingActivity.this,"退出失败",Toast.LENGTH_SHORT).show();
-
+            resultintent.putExtra("state","exit failed");
         }
+        setResult(MyInfoActivity.RESULT_OK,resultintent);
+        finish();
     }
 
     private void jump2main(){
